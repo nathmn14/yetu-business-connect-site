@@ -160,14 +160,67 @@ img {
     padding: 20px 0;
 }
 
-.logo h1 {
-    font-size: 1.8rem;
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
     color: var(--dark-color);
-    margin: 0;
+    font-weight: 700;
 }
 
-.logo h1 span {
-    color: var(--primary-color);
+.logo-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.logo:hover .logo-icon {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.logo-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.logo-slogan {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 15px 0;
+    transition: var(--transition);
 }
 
 .nav-links {
@@ -220,7 +273,7 @@ img {
 /* ===== Hero Section ===== */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     text-align: center;
@@ -246,6 +299,38 @@ img {
 .hero .btn {
     animation: fadeInUp 1s ease 0.4s;
     animation-fill-mode: both;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    animation: fadeInUp 1s ease 0.4s;
+    animation-fill-mode: both;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--dark-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes fadeInUp {
@@ -621,6 +706,28 @@ img {
     opacity: 0.8;
 }
 
+.footer-address {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-address i {
+    color: var(--primary-color);
+    margin-right: 15px;
+    margin-top: 5px;
+    font-size: 1.2rem;
+}
+
+.footer-address p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
 .footer-links h3,
 .footer-services h3,
 .footer-newsletter h3 {
@@ -772,6 +879,17 @@ img {
 }
 
 @media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons .btn,
+    .hero-buttons .btn-outline {
+        width: 100%;
+        max-width: 250px;
+    }
+    
     .hamburger {
         display: block;
     }

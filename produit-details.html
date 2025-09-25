@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Produit - Yetu Business Connect</title>
+    <meta name="description" content="Détails du produit - Yetu Business Connect, votre partenaire en agriculture moderne et services logistiques.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/product-details.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">Yetu Business Connect</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#agriculture">Agriculture</a></li>
+                    <li><a href="index.html#cooperative">Coopérative</a></li>
+                    <li><a href="index.html#logistique">Logistique</a></li>
+                    <li><a href="produits.html" class="active">Nos Produits</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Details Section -->
+    <section class="product-details-section section-padding">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html">Accueil</a> / 
+                <a href="produits.html">Nos Produits</a> / 
+                <span>Détails du produit</span>
+            </div>
+            
+            <div class="product-details">
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="assets/images/tomate-large.jpg" alt="Tomate fraîche" id="mainImage">
+                    </div>
+                    <div class="thumbnail-container">
+                        <div class="thumbnail active" data-image="assets/images/tomate-large.jpg">
+                            <img src="assets/images/tomate.jpg" alt="Tomate fraîche">
+                        </div>
+                        <div class="thumbnail" data-image="assets/images/tomate-alt1.jpg">
+                            <img src="assets/images/tomate-alt1.jpg" alt="Tomate fraîche vue de dessus">
+                        </div>
+                        <div class="thumbnail" data-image="assets/images/tomate-alt2.jpg">
+                            <img src="assets/images/tomate-alt2.jpg" alt="Tomate fraîche en panier">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-info">
+                    <h1>Tomate fraîche</h1>
+                    
+                    <div class="product-meta">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(12 avis)</span>
+                        </div>
+                        <span class="product-id">Réf: YBC-TOMAT-001</span>
+                    </div>
+                    
+                    <div class="price">
+                        <span class="current-price">4 000 FC/kg</span>
+                        <span class="old-price">4 500 FC/kg</span>
+                        <span class="discount">-11%</span>
+                    </div>
+                    
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p>Nos tomates fraîches sont cultivées avec soin selon des méthodes d'agriculture durable. Elles sont récoltées à maturité pour vous offrir une saveur riche et un arôme incomparable. Parfaites pour les salades, les sauces, les soupes ou simplement à déguster nature.</p>
+                        
+                        <h3>Caractéristiques</h3>
+                        <ul class="features-list">
+                            <li><i class="fas fa-check"></i> 100% naturelles et biologiques</li>
+                            <li><i class="fas fa-check"></i> Riche en antioxydants et en vitamines</li>
+                            <li><i class="fas fa-check"></i> Sans OGM</li>
+                            <li><i class="fas fa-check"></i> Culture locale et responsable</li>
+                            <li><i class="fas fa-check"></i> Emballage écologique</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="quantity-btn" id="decreaseQty">-</button>
+                            <input type="number" value="1" min="1" id="quantity">
+                            <button class="quantity-btn" id="increaseQty">+</button>
+                        </div>
+                        
+                        <button class="btn btn-primary add-to-cart-btn">
+                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
+                        </button>
+                        
+                        <button class="btn-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="product-meta-details">
+                        <div class="meta-item">
+                            <span class="meta-label">Catégorie:</span>
+                            <a href="produits.html?category=legumes">Légumes</a>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Disponibilité:</span>
+                            <span class="in-stock">En stock (50 kg)</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Partager:</span>
+                            <div class="social-share">
+                                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="envelope"><i class="far fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="description">Description détaillée</button>
+                    <button class="tab-btn" data-tab="specs">Spécifications</button>
+                    <button class="tab-btn" data-tab="reviews">Avis (12)</button>
+                </div>
+                
+                <div class="tabs-content">
+                    <div class="tab-pane active" id="description">
+                        <h3>À propos de ce produit</h3>
+                        <p>Nos tomates fraîches sont le résultat d'un savoir-faire agricole qui allie méthodes traditionnelles et innovations durables. Cultivées en plein champ, elles bénéficient d'un ensoleillement optimal et d'un sol riche en nutriments, ce qui leur confère une saveur incomparable.</p>
+                        
+                        <p>Chaque tomate est soigneusement sélectionnée à la main pour garantir une qualité optimale. Nous privilégions des méthodes de culture respectueuses de l'environnement, sans utilisation de pesticides chimiques nocifs.</p>
+                        
+                        <h3>Avantages pour la santé</h3>
+                        <p>Les tomates sont riches en lycopène, un puissant antioxydant, ainsi qu'en vitamines A, C et K. Elles contribuent à renforcer le système immunitaire, à améliorer la santé cardiaque et à protéger la peau des dommages causés par le soleil.</p>
+                        
+                        <h3>Conseils de conservation</h3>
+                        <p>Pour préserver toute leur fraîcheur, nous vous recommandons de conserver les tomates à température ambiante, à l'abri de la lumière directe du soleil. Évitez de les réfrigérer, car cela peut altérer leur texture et leur goût.</p>
+                    </div>
+                    
+                    <div class="tab-pane" id="specs">
+                        <h3>Spécifications techniques</h3>
+                        <table class="specs-table">
+                            <tr>
+                                <th>Variété</th>
+                                <td>Tomate ronde rouge</td>
+                            </tr>
+                            <tr>
+                                <th>Origine</th>
+                                <td>Région de Kinshasa, RDC</td>
+                            </tr>
+                            <tr>
+                                <th>Méthode de culture</th>
+                                <td>Agriculture biologique</td>
+                            </tr>
+                            <tr>
+                                <th>Poids moyen</th>
+                                <td>150-200g par pièce</td>
+                            </tr>
+                            <tr>
+                                <th>Durée de conservation</th>
+                                <td>5-7 jours à température ambiante</td>
+                            </tr>
+                            <tr>
+                                <th>Conditionnement</th>
+                                <td>Filet biodégradable de 1kg</td>
+                            </tr>
+                            <tr>
+                                <th>Allergènes</th>
+                                <td>Aucun connu</td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    <div class="tab-pane" id="reviews">
+                        <div class="reviews-summary">
+                            <div class="average-rating">
+                                <div class="rating-value">4.2</div>
+                                <div class="rating-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <div class="rating-count">Basé sur 12 avis</div>
+                            </div>
+                            
+                            <div class="rating-bars">
+                                <div class="rating-bar">
+                                    <span class="rating-label">5 étoiles</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 70%;"></div>
+                                    </div>
+                                    <span class="rating-percent">70%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span class="rating-label">4 étoiles</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 20%;"></div>
+                                    </div>
+                                    <span class="rating-percent">20%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span class="rating-label">3 étoiles</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 5%;"></div>
+                                    </div>
+                                    <span class="rating-percent">5%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span class="rating-label">2 étoiles</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 3%;"></div>
+                                    </div>
+                                    <span class="rating-percent">3%</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span class="rating-label">1 étoile</span>
+                                    <div class="bar-container">
+                                        <div class="bar" style="width: 2%;"></div>
+                                    </div>
+                                    <span class="rating-percent">2%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="reviews-list">
+                            <h3>Avis clients</h3>
+                            
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="reviewer">
+                                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Avis client">
+                                        <div>
+                                            <h4>Marie K.</h4>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">15 septembre 2025</span>
+                                </div>
+                                <div class="review-content">
+                                    <h5>Excellente qualité</h5>
+                                    <p>Les tomates sont délicieuses et très parfumées. La livraison a été rapide et l'emballage très soigné. Je recommande vivement ce produit !</p>
+                                </div>
+                            </div>
+                            
+                            <div class="review">
+                                <div class="review-header">
+                                    <div class="reviewer">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Avis client">
+                                        <div>
+                                            <h4>Jean-Paul M.</h4>
+                                            <div class="rating">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <span class="review-date">10 septembre 2025</span>
+                                </div>
+                                <div class="review-content">
+                                    <h5>Très bon produit</h5>
+                                    <p>Les tomates sont savoureuses et bien mûres. J'ai été agréablement surpris par la qualité. Seul bémol, quelques tomates étaient légèrement abîmées à l'arrivée, mais rien de grave.</p>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-outline load-more-reviews">
+                                Charger plus d'avis
+                            </button>
+                        </div>
+                        
+                        <div class="add-review">
+                            <h3>Donnez votre avis</h3>
+                            <p>Votre adresse email ne sera pas publiée. Les champs obligatoires sont indiqués avec *</p>
+                            
+                            <form class="review-form">
+                                <div class="form-group">
+                                    <label>Votre note *</label>
+                                    <div class="rating-input">
+                                        <input type="radio" id="star5" name="rating" value="5">
+                                        <label for="star5" title="5 étoiles"><i class="far fa-star"></i></label>
+                                        
+                                        <input type="radio" id="star4" name="rating" value="4">
+                                        <label for="star4" title="4 étoiles"><i class="far fa-star"></i></label>
+                                        
+                                        <input type="radio" id="star3" name="rating" value="3" checked>
+                                        <label for="star3" title="3 étoiles"><i class="far fa-star"></i></label>
+                                        
+                                        <input type="radio" id="star2" name="rating" value="2">
+                                        <label for="star2" title="2 étoiles"><i class="far fa-star"></i></label>
+                                        
+                                        <input type="radio" id="star1" name="rating" value="1">
+                                        <label for="star1" title="1 étoile"><i class="far fa-star"></i></label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-title">Titre de l'avis *</label>
+                                    <input type="text" id="review-title" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-comment">Votre avis *</label>
+                                    <textarea id="review-comment" class="form-control" rows="5" required></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-name">Nom *</label>
+                                    <input type="text" id="review-name" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="review-email">Email *</label>
+                                    <input type="email" id="review-email" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-check">
+                                    <input type="checkbox" id="save-info" class="form-check-input">
+                                    <label for="save-info" class="form-check-label">
+                                        Enregistrer mon nom, mon adresse électronique et mon site Web dans ce navigateur pour la prochaine fois que je commenterai.
+                                    </label>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary">Soumettre l'avis</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Related Products -->
+            <div class="related-products">
+                <div class="section-header">
+                    <h2>Produits similaires</h2>
+                    <p>Découvrez d'autres produits qui pourraient vous intéresser</p>
+                </div>
+                
+                <div class="related-products-grid">
+                    <div class="related-product">
+                        <div class="product-badge">Nouveau</div>
+                        <div class="product-image">
+                            <img src="assets/images/poivron.jpg" alt="Poivron">
+                            <div class="product-actions">
+                                <button class="quick-view" title="Aperçu rapide">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <button class="add-to-wishlist" title="Ajouter à la liste de souhaits">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="add-to-cart" title="Ajouter au panier">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="produit-details.html">Poivron frais</a></h3>
+                            <div class="price">
+                                <span class="current-price">5 500 FC/kg</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(8)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product">
+                        <div class="product-badge discount">-15%</div>
+                        <div class="product-image">
+                            <img src="assets/images/concombre.jpg" alt="Concombre">
+                            <div class="product-actions">
+                                <button class="quick-view" title="Aperçu rapide">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <button class="add-to-wishlist" title="Ajouter à la liste de souhaits">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="add-to-cart" title="Ajouter au panier">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="produit-details.html">Concombre frais</a></h3>
+                            <div class="price">
+                                <span class="current-price">3 500 FC/kg</span>
+                                <span class="old-price">4 100 FC/kg</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <span>(15)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product">
+                        <div class="product-image">
+                            <img src="assets/images/aubergine.jpg" alt="Aubergine">
+                            <div class="product-actions">
+                                <button class="quick-view" title="Aperçu rapide">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <button class="add-to-wishlist" title="Ajouter à la liste de souhaits">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="add-to-cart" title="Ajouter au panier">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="produit-details.html">Aubergine fraîche</a></h3>
+                            <div class="price">
+                                <span class="current-price">4 500 FC/kg</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(6)</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="related-product">
+                        <div class="product-badge new">Nouveau</div>
+                        <div class="product-image">
+                            <img src="assets/images/piment.jpg" alt="Piment">
+                            <div class="product-actions">
+                                <button class="quick-view" title="Aperçu rapide">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <button class="add-to-wishlist" title="Ajouter à la liste de souhaits">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                                <button class="add-to-cart" title="Ajouter au panier">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3><a href="produit-details.html">Piment frais</a></h3>
+                            <div class="price">
+                                <span class="current-price">5 000 FC/kg</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(10)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Restez informé de nos offres spéciales</h3>
+                <p>Abonnez-vous à notre newsletter pour recevoir des offres exclusives et des mises à jour sur nos produits.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">S'abonner</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Yetu Business Connect</h3>
+                    <p>Votre partenaire de confiance pour le marketing relationnel, l'agriculture moderne et les services logistiques.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h3>Liens Rapides</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#agriculture">Agriculture</a></li>
+                        <li><a href="index.html#cooperative">Coopérative</a></li>
+                        <li><a href="index.html#logistique">Logistique</a></li>
+                        <li><a href="produits.html">Nos Produits</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h3>Nos Services</h3>
+                    <ul>
+                        <li>Marketing Relationnel</li>
+                        <li>Agriculture Moderne</li>
+                        <li>Coopérative Agricole</li>
+                        <li>Services Logistiques</li>
+                        <li>Vente de Semences</li>
+                        <li>Formation Agricole</li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contactez-nous</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Avenue des Affaires, Kinshasa, RDC</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <p>+243 123 456 789</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@yetubusinessconnect.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Lun - Sam: 8h00 - 18h00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yetu Business Connect. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/product-details.js"></script>
+</body>
+</html>
