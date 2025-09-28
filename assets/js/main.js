@@ -1,214 +1,273 @@
-// Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation Toggle
+    // Gestion du menu mobile
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links a');
     const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-links li');
-    
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            // Toggle mobile menu
-            navLinks.classList.toggle('active');
-            
-            // Animate hamburger icon
-            this.classList.toggle('active');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            nav.classList.toggle('active');
+            this.classList.toggle('open');
         });
     }
-    
-    // Close mobile menu when clicking on a nav link
-    navLinksItems.forEach(item => {
-        item.addEventListener('click', function() {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
+
+    // Fermer le menu mobile lors du clic sur un lien
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+            menuToggle.classList.remove('open');
         });
     });
-    
-    // Sticky Header on Scroll
+
+    // Gestion du header fixe au défilement
     const header = document.querySelector('.header');
     let lastScroll = 0;
     
     window.addEventListener('scroll', function() {
         const currentScroll = window.pageYOffset;
         
-        // Add/remove scrolled class to header
+        // Ajouter/supprimer la classe 'scrolled' sur le header
         if (currentScroll > 100) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
         
-        // Hide header on scroll down, show on scroll up
+        // Masquer le header lors du défilement vers le bas, l'afficher vers le haut
         if (currentScroll <= 0) {
             header.classList.remove('scroll-up');
             return;
         }
         
         if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-            // Scroll Down
+            // Défilement vers le bas
             header.classList.remove('scroll-up');
             header.classList.add('scroll-down');
         } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-            // Scroll Up
+            // Défilement vers le haut
             header.classList.remove('scroll-down');
             header.classList.add('scroll-up');
         }
         
         lastScroll = currentScroll;
+    });
+
+    // Gestion des labels flottants et de la validation du formulaire
+    const contactForm = document.getElementById('contactForm');
+    
+    if (contactForm) {
+        const formInputs = contactForm.querySelectorAll('.form-control');
+        const formSelects = contactForm.querySelectorAll('select');
+        const formSubmit = contactForm.querySelector('.btn-submit');
         
-        // Show/Hide Back to Top Button
-        const backToTop = document.querySelector('.back-to-top');
-        if (backToTop) {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('active');
+        // Fonction pour gérer les labels flottants
+        function handleFloatLabel(input) {
+            const parent = input.parentElement;
+            const label = parent.querySelector('label');
+            
+            if (!label) return;
+            
+            // Vérifier si le champ a une valeur ou est en focus
+            if (input.value.trim() !== '' || document.activeElement === input) {
+                parent.classList.add('focused');
+                label.classList.add('floating');
             } else {
-                backToTop.classList.remove('active');
+                parent.classList.remove('focused');
+                label.classList.remove('floating');
+            }
+            
+            // Validation en temps réel
+            validateField(input);
+        }
+        
+        // Fonction de validation des champs
+        function validateField(input) {
+            const parent = input.parentElement;
+            const errorMessage = parent.querySelector('.error-message');
+            let isValid = true;
+            
+            // Réinitialiser les classes d'erreur
+            parent.classList.remove('error', 'valid');
+            
+            // Vérifier si le champ est requis
+            if (input.hasAttribute('required') && input.value.trim() === '') {
+                showError(parent, errorMessage, 'Ce champ est obligatoire');
+                isValid = false;
+            } 
+            // Validation de l'email
+            else if (input.type === 'email' && input.value.trim() !== '') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(input.value.trim())) {
+                    showError(parent, errorMessage, 'Veuillez entrer une adresse email valide');
+                    isValid = false;
+                }
+            }
+            // Validation du téléphone (optionnel)
+            else if (input.type === 'tel' && input.value.trim() !== '') {
+                const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+                if (!phoneRegex.test(input.value.trim())) {
+                    showError(parent, errorMessage, 'Veuillez entrer un numéro de téléphone valide');
+                    isValid = false;
+                }
+            }
+            
+            // Si le champ est valide
+            if (isValid && input.value.trim() !== '') {
+                parent.classList.add('valid');
+                if (errorMessage) errorMessage.style.display = 'none';
+            }
+            
+            return isValid;
+        }
+        
+        // Afficher un message d'erreur
+        function showError(parent, errorElement, message) {
+            parent.classList.add('error');
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.style.display = 'flex';
             }
         }
-    });
-    
-    // Smooth Scrolling for Anchor Links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+        
+        // Gestion des événements pour les champs de formulaire
+        formInputs.forEach(input => {
+            // Événement de focus
+            input.addEventListener('focus', function() {
+                const parent = this.parentElement;
+                parent.classList.add('focused');
+                const label = parent.querySelector('label');
+                if (label) label.classList.add('floating');
+            });
             
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            // Événement de perte de focus
+            input.addEventListener('blur', function() {
+                handleFloatLabel(this);
+            });
             
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerOffset = 80;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+            // Validation en temps réel
+            input.addEventListener('input', function() {
+                validateField(this);
+            });
+            
+            // Initialisation des champs
+            handleFloatLabel(input);
+        });
+        
+        // Gestion des sélecteurs
+        formSelects.forEach(select => {
+            const parent = select.parentElement;
+            const label = parent.querySelector('label');
+            
+            select.addEventListener('change', function() {
+                if (this.value) {
+                    parent.classList.add('filled');
+                    if (label) label.classList.add('floating');
+                } else {
+                    parent.classList.remove('filled');
+                    if (label) label.classList.remove('floating');
+                }
+                validateField(this);
+            });
+            
+            // Initialisation du sélecteur
+            if (select.value) {
+                parent.classList.add('filled');
+                if (label) label.classList.add('floating');
             }
         });
-    });
-    
-    // Back to Top Button
-    const backToTop = document.querySelector('.back-to-top');
-    if (backToTop) {
-        backToTop.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    }
-    
-    // Form Submission
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
+        
+        // Soumission du formulaire
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form data
-            const formData = new FormData(this);
-            const formValues = Object.fromEntries(formData.entries());
+            let isFormValid = true;
             
-            // Here you would typically send the form data to a server
-            console.log('Form submitted:', formValues);
-            
-            // Show success message
-            alert('Merci pour votre message ! Nous vous contacterons bientôt.');
-            
-            // Reset form
-            this.reset();
-        });
-    }
-    
-    // Newsletter Subscription
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const emailInput = this.querySelector('input[type="email"]');
-            const email = emailInput.value.trim();
-            
-            if (email) {
-                // Here you would typically send the email to your server
-                console.log('Newsletter subscription:', email);
-                
-                // Show success message
-                alert('Merci de vous être abonné à notre newsletter !');
-                
-                // Reset form
-                this.reset();
-            }
-        });
-    }
-    
-    // Animation on Scroll
-    const animateOnScroll = () => {
-        const elements = document.querySelectorAll('.service-card, .product-card, .logistics-card');
-        
-        elements.forEach(element => {
-            const elementPosition = element.getBoundingClientRect().top;
-            const screenPosition = window.innerHeight / 1.3;
-            
-            if (elementPosition < screenPosition) {
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }
-        });
-    };
-    
-    // Initialize animations
-    window.addEventListener('load', animateOnScroll);
-    window.addEventListener('scroll', animateOnScroll);
-    
-    // Add animation classes to elements
-    document.querySelectorAll('.service-card, .product-card, .logistics-card').forEach((element, index) => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        element.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    // Initialize animations for cooperative section
-    const cooperativeSection = document.querySelector('.cooperative');
-    if (cooperativeSection) {
-        const cooperativeText = cooperativeSection.querySelector('.cooperative-text');
-        const cooperativeImage = cooperativeSection.querySelector('.cooperative-image');
-        
-        cooperativeText.style.opacity = '0';
-        cooperativeText.style.transform = 'translateX(-50px)';
-        cooperativeText.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        
-        cooperativeImage.style.opacity = '0';
-        cooperativeImage.style.transform = 'translateX(50px)';
-        cooperativeImage.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    cooperativeText.style.opacity = '1';
-                    cooperativeText.style.transform = 'translateX(0)';
-                    
-                    cooperativeImage.style.opacity = '1';
-                    cooperativeImage.style.transform = 'translateX(0)';
+            // Valider tous les champs
+            formInputs.forEach(input => {
+                if (!validateField(input)) {
+                    isFormValid = false;
                 }
             });
-        }, { threshold: 0.1 });
-        
-        observer.observe(cooperativeSection);
+            
+            formSelects.forEach(select => {
+                if (!validateField(select)) {
+                    isFormValid = false;
+                }
+            });
+            
+            // Si le formulaire est valide, simuler l'envoi
+            if (isFormValid) {
+                // Afficher l'état de chargement
+                if (formSubmit) {
+                    formSubmit.disabled = true;
+                    formSubmit.classList.add('loading');
+                }
+                
+                // Simuler un délai d'envoi
+                setTimeout(() => {
+                    // Cacher le formulaire et afficher le message de succès
+                    contactForm.classList.add('submitted');
+                    
+                    // Réinitialiser le formulaire après l'envoi
+                    contactForm.reset();
+                    
+                    // Réinitialiser les états des champs
+                    formInputs.forEach(input => {
+                        const parent = input.parentElement;
+                        parent.classList.remove('focused', 'valid');
+                        const label = parent.querySelector('label');
+                        if (label) label.classList.remove('floating');
+                    });
+                    
+                    // Réinitialiser les sélecteurs
+                    formSelects.forEach(select => {
+                        const parent = select.parentElement;
+                        parent.classList.remove('filled');
+                        const label = parent.querySelector('label');
+                        if (label) label.classList.remove('floating');
+                    });
+                    
+                    // Réinitialiser le bouton d'envoi
+                    if (formSubmit) {
+                        formSubmit.disabled = false;
+                        formSubmit.classList.remove('loading');
+                    }
+                    
+                    // Réinitialiser après 5 secondes
+                    setTimeout(() => {
+                        contactForm.classList.remove('submitted');
+                    }, 5000);
+                    
+                }, 1500);
+            } else {
+                // Faire défiler jusqu'au premier champ en erreur
+                const firstError = contactForm.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }
+            }
+        });
     }
-});
 
-// Preloader
-window.addEventListener('load', function() {
-    const preloader = document.querySelector('.preloader');
-    if (preloader) {
-        preloader.style.transition = 'opacity 0.5s ease';
-        preloader.style.opacity = '0';
+    // Animation au défilement
+    function animateOnScroll() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
         
-        setTimeout(() => {
-            preloader.style.display = 'none';
-        }, 500);
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+            
+            if (elementTop < windowHeight - 100) {
+                element.classList.add('animated');
+            }
+        });
     }
+    
+    // Initialisation des animations
+    window.addEventListener('load', animateOnScroll);
+    window.addEventListener('scroll', animateOnScroll);
 });

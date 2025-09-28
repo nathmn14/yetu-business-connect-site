@@ -15,6 +15,9 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -51,6 +54,14 @@
 
     <!-- Hero Section -->
     <section id="accueil" class="hero">
+        <div class="hero-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="assets/images/hero/hero-home-mobile.jpg">
+                <source media="(min-width: 769px)" srcset="assets/images/hero/hero-home.jpg">
+                <img src="assets/images/hero/hero-home.jpg" alt="Équipe Yetu Business Connect - Votre partenaire d'affaires">
+            </picture>
+            <div class="hero-overlay"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <h1>Votre Partenaire d'Affaires de Confiance</h1>
@@ -110,27 +121,24 @@
                 <h2>Agriculture Moderne</h2>
                 <p>Découvrez nos cultures maraîchères de qualité</p>
             </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <img src="assets/images/piment.jpg" alt="Piment">
-                    <h3>Piment</h3>
-                    <p>Culture de piments de différentes variétés, riches en saveur et en arômes.</p>
+            <div class="featured-products">
+                <div class="featured-product">
+                    <div class="product-image-container">
+                        <img src="assets/images/tous les produits yetu.jpeg" alt="Sélection de nos produits phares" class="featured-product-image" loading="lazy">
+                    </div>
+                    <div class="featured-product-content">
+                        <h3>Nos Produits d'Exception</h3>
+                        <p>Découvrez notre sélection de produits naturels de haute qualité, soigneusement sélectionnés pour leurs bienfaits et leur qualité exceptionnelle.</p>
+                        <ul class="product-highlights">
+                            <li>Graines de sésame biologiques</li>
+                            <li>Graines de chia riches en oméga-3</li>
+                            <li>Cacao pur et chocolat en poudre</li>
+                            <li>Et bien d'autres produits naturels</li>
+                        </ul>
+                        <a href="produits.html" class="btn btn-primary">Découvrir tous nos produits</a>
+                    </div>
                 </div>
-                <div class="product-card">
-                    <img src="assets/images/concombre.jpg" alt="Concombre">
-                    <h3>Concombre</h3>
-                    <p>Concombres frais et croquants, cultivés selon des méthodes respectueuses de l'environnement.</p>
-                </div>
-                <div class="product-card">
-                    <img src="assets/images/tomate.jpg" alt="Tomate">
-                    <h3>Tomate</h3>
-                    <p>Tomates juteuses et savoureuses, riches en nutriments essentiels.</p>
-                </div>
-                <div class="product-card">
-                    <img src="assets/images/aubergine.jpg" alt="Aubergine">
-                    <h3>Aubergine</h3>
-                    <p>Aubergines fraîches, parfaites pour une cuisine saine et délicieuse.</p>
-                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -155,7 +163,38 @@
                     <a href="#contact" class="btn btn-secondary">En savoir plus</a>
                 </div>
                 <div class="cooperative-image">
-                    <img src="assets/images/cooperative.jpg" alt="Coopérative Agricole">
+                    <picture>
+                        <source type="image/webp" srcset="assets/images/Sesame_chia_cacao.jpeg">
+                        <img src="assets/images/Sesame_chia_cacao.jpeg" alt="Sélection de produits agricoles Yetu - Sésame, chia et cacao" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produits de Beauté Section -->
+    <section id="beaute" class="beauty section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Beauté Naturelle</h2>
+                <p>Découvrez nos soins naturels pour le corps et les cheveux</p>
+            </div>
+            <div class="featured-products">
+                <div class="featured-product">
+                    <div class="product-image-container">
+                        <img src="assets/images/vaseline.jpeg" alt="Gamme complète de soins de beauté naturels Yetu" class="featured-product-image" loading="lazy">
+                    </div>
+                    <div class="featured-product-content">
+                        <h3>Notre Gamme Beauté</h3>
+                        <p>Des produits de soin naturels et artisanaux, conçus pour prendre soin de votre peau et de vos cheveux en douceur, sans produits chimiques agressifs.</p>
+                        <ul class="product-highlights">
+                            <li>Soins hydratants à la vaseline naturelle</li>
+                            <li>Savons artisanaux aux huiles essentielles</li>
+                            <li>Glycérine végétale pure</li>
+                            <li>Soins capillaires naturels</li>
+                        </ul>
+                        <a href="produits.html#beaute" class="btn btn-primary">Découvrir nos produits de beauté</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -165,43 +204,92 @@
     <section id="logistique" class="logistics section-padding">
         <div class="container">
             <div class="section-header">
-                <h2>Services Logistiques</h2>
-                <p>Des solutions complètes pour vos besoins en logistique</p>
+                <span class="section-subtitle">Nos Services</span>
+                <h2 class="section-title">Solutions Logistiques Complètes</h2>
+                <div class="section-divider"></div>
+                <p class="section-description">Des solutions sur mesure pour répondre à tous vos besoins logistiques avec professionnalisme et efficacité</p>
             </div>
+            
             <div class="logistics-grid">
-                <div class="logistics-card">
-                    <div class="logistics-icon">
-                        <i class="fas fa-home"></i>
+                <!-- Carte Stockage -->
+                <div class="logistics-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="logistics-icon">
+                                <i class="fas fa-warehouse"></i>
+                            </div>
+                            <h3>Stockage</h3>
+                            <p>Solutions d'entreposage sécurisées et flexibles</p>
+                            <span class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="card-back">
+                            <h4>Nos Services de Stockage</h4>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Entreposage sécurisé 24/7</li>
+                                <li><i class="fas fa-check-circle"></i> Gestion des stocks en temps réel</li>
+                                <li><i class="fas fa-check-circle"></i> Contrôle qualité rigoureux</li>
+                                <li><i class="fas fa-check-circle"></i> Espaces modulables</li>
+                            </ul>
+                            <button class="btn btn-outline">Demander un devis</button>
+                        </div>
                     </div>
-                    <h3>Immobilier</h3>
-                    <ul>
-                        <li>Location de parcelles</li>
-                        <li>Vente de terrains</li>
-                        <li>Concessions immobilières</li>
-                    </ul>
                 </div>
-                <div class="logistics-card">
-                    <div class="logistics-icon">
-                        <i class="fas fa-plane"></i>
+
+                <!-- Carte Transport -->
+                <div class="logistics-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="logistics-icon">
+                                <i class="fas fa-truck-loading"></i>
+                            </div>
+                            <h3>Transport</h3>
+                            <p>Des solutions de transport adaptées à vos besoins</p>
+                            <span class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="card-back">
+                            <h4>Nos Services de Transport</h4>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Logistique complète</li>
+                                <li><i class="fas fa-check-circle"></i> Transport routier national</li>
+                                <li><i class="fas fa-check-circle"></i> Livraison fiable et sécurisée</li>
+                                <li><i class="fas fa-check-circle"></i> Suivi en temps réel</li>
+                            </ul>
+                            <button class="btn btn-outline">Demander un devis</button>
+                        </div>
                     </div>
-                    <h3>Transport Aérien</h3>
-                    <ul>
-                        <li>Fret aérien cargo</li>
-                        <li>Vente de billets d'avion</li>
-                        <li>Assistance voyage</li>
-                    </ul>
                 </div>
-                <div class="logistics-card">
-                    <div class="logistics-icon">
-                        <i class="fas fa-shopping-cart"></i>
+
+                <!-- Carte Achats en Ligne -->
+                <div class="logistics-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="logistics-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>Achats en Ligne</h3>
+                            <p>Vos achats en ligne livrés en toute simplicité</p>
+                            <span class="learn-more">En savoir plus <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                        <div class="card-back">
+                            <h4>Nos Services d'Achat</h4>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check-circle"></i> Facilitation d'achat en ligne</li>
+                                <li><i class="fas fa-check-circle"></i> Services de livraison rapide</li>
+                                <li><i class="fas fa-check-circle"></i> Assistance aux démarches de visa</li>
+                                <li><i class="fas fa-check-circle"></i> Service client dédié</li>
+                            </ul>
+                            <button class="btn btn-outline">Demander un devis</button>
+                        </div>
                     </div>
-                    <h3>Achats en Ligne</h3>
-                    <ul>
-                        <li>Facilitation d'achat en ligne</li>
-                        <li>Services de livraison</li>
-                        <li>Assistance aux démarches de visa</li>
-                    </ul>
                 </div>
+            </div>
+            
+            <div class="logistics-cta" data-aos="fade-up">
+                <div class="cta-content">
+                    <h3>Besoin d'une solution sur mesure ?</h3>
+                    <p>Notre équipe d'experts est à votre disposition pour étudier votre projet et vous proposer la solution la plus adaptée à vos besoins spécifiques.</p>
+                </div>
+                <a href="#contact" class="btn btn-primary">Contactez-nous</a>
             </div>
         </div>
     </section>
@@ -215,52 +303,206 @@
             </div>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Nos Coordonnées</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>Siège social: RDC, Nord Kivu, Butembo<br>
-                        Boulevard rue président de la République<br>
-                        Bâtiment Kidubai Butembo, 3ème niveau</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+243 974 659 021</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>info@yetubusinessconnect.com</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <div class="contact-info-inner">
+                        <h3><i class="fas fa-address-card"></i> Nos Coordonnées</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Adresse</h4>
+                                <p>Siège social: RDC, Nord Kivu, Butembo<br>
+                                Boulevard rue président de la République<br>
+                                Bâtiment Kidubai Butembo, 3ème niveau</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Téléphone</h4>
+                                <p>+243 974 659 021</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p>info@yetubusinessconnect.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Heures d'ouverture</h4>
+                                <p>Lundi - Vendredi: 8h00 - 17h00<br>
+                                Samedi: 9h00 - 13h00</p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <h4>Suivez-nous</h4>
+                            <div class="social-icons">
+                                <a href="#" class="social-icon" aria-label="Facebook">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="Twitter">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                                <a href="#" class="social-icon" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Votre nom" required>
+                <form class="contact-form" id="contactForm" novalidate>
+                    <div class="form-header">
+                        <h3><i class="far fa-paper-plane"></i> Envoyez-nous un message</h3>
+                        <p>Notre équipe est à votre écoute pour répondre à toutes vos questions.</p>
                     </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Votre email" required>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" class="form-control" placeholder=" " required>
+                            <label for="name">Votre nom complet *</label>
+                            <div class="error-message">
+                                <i class="fas fa-exclamation-circle"></i> Veuillez entrer votre nom complet
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" class="form-control" placeholder=" " required>
+                            <label for="email">Votre adresse email *</label>
+                            <div class="error-message">
+                                <i class="fas fa-exclamation-circle"></i> Veuillez entrer une adresse email valide
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" placeholder="Votre téléphone">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder=" ">
+                            <label for="phone">Numéro de téléphone</label>
+                            <div class="hint">Facultatif</div>
+                        </div>
+                        
+                        <div class="form-group select-wrapper">
+                            <select id="service" name="service" class="form-control" required>
+                                <option value="" disabled selected></option>
+                                <option value="marketing">Marketing Relationnel</option>
+                                <option value="agriculture">Agriculture Moderne</option>
+                                <option value="cooperative">Coopérative Agricole</option>
+                                <option value="logistique">Services Logistiques</option>
+                            </select>
+                            <label for="service">Service concerné *</label>
+                            <i class="fas fa-chevron-down"></i>
+                            <div class="error-message">
+                                <i class="fas fa-exclamation-circle"></i> Veuillez sélectionner un service
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <select>
-                            <option value="">Sélectionnez un service</option>
-                            <option value="marketing">Marketing Relationnel</option>
-                            <option value="agriculture">Agriculture Moderne</option>
-                            <option value="cooperative">Coopérative Agricole</option>
-                            <option value="logistique">Services Logistiques</option>
-                        </select>
+                        <div class="error-message">Veuillez sélectionner un service</div>
                     </div>
-                    <div class="form-group">
-                        <textarea placeholder="Votre message" rows="5" required></textarea>
+                    <div class="form-group message-group">
+                        <textarea id="message" name="message" class="form-control" rows="5" placeholder=" " required></textarea>
+                        <label for="message">Votre message *</label>
+                        <div class="error-message">
+                            <i class="fas fa-exclamation-circle"></i> Veuillez entrer votre message
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                    
+                    <div class="form-footer">
+                        <div class="form-note">
+                            <i class="fas fa-info-circle"></i> Les champs marqués d'un * sont obligatoires
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span class="button-content">
+                                <span class="button-text">Envoyer le message</span>
+                                <span class="button-icon">
+                                    <i class="fas fa-paper-plane"></i>
+                                </span>
+                            </span>
+                            <span class="button-loader">
+                                <i class="fas fa-circle-notch fa-spin"></i>
+                            </span>
+                        </button>
+                    </div>
+                    
+                    <div class="form-success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h4>Message envoyé avec succès !</h4>
+                        <p>Nous vous répondrons dans les plus brefs délais.</p>
+                    </div>
                 </form>
+                <script>
+                    // Script pour gérer les labels flottants et la validation
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const form = document.getElementById('contactForm');
+                        const inputs = form.querySelectorAll('input, textarea, select');
+                        
+                        // Gestion des labels flottants
+                        inputs.forEach(input => {
+                            // Vérification initiale
+                            if (input.value || input.tagName === 'SELECT') {
+                                input.parentElement.classList.add('focused');
+                            }
+                            
+                            // Gestion des événements
+                            input.addEventListener('focus', function() {
+                                this.parentElement.classList.add('focused');
+                            });
+                            
+                            input.addEventListener('blur', function() {
+                                if (!this.value && this.tagName !== 'SELECT') {
+                                    this.parentElement.classList.remove('focused');
+                                }
+                            });
+                            
+                            // Gestion du select
+                            if (input.tagName === 'SELECT') {
+                                input.addEventListener('change', function() {
+                                    if (this.value) {
+                                        this.parentElement.classList.add('focused');
+                                    } else {
+                                        this.parentElement.classList.remove('focused');
+                                    }
+                                });
+                            }
+                        });
+                        
+                        // Validation du formulaire
+                        form.addEventListener('submit', function(e) {
+                            let isValid = true;
+                            
+                            inputs.forEach(input => {
+                                if (input.hasAttribute('required') && !input.value) {
+                                    input.parentElement.classList.add('error');
+                                    isValid = false;
+                                } else if (input.type === 'email' && input.value && !/\S+@\S+\.\S+/.test(input.value)) {
+                                    input.parentElement.classList.add('error');
+                                    isValid = false;
+                                } else {
+                                    input.parentElement.classList.remove('error');
+                                }
+                            });
+                            
+                            if (!isValid) {
+                                e.preventDefault();
+                            }
+                        });
+                    });
+                </script>
             </div>
         </div>
     </section>
@@ -323,7 +565,18 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
 </body>
 </html>
