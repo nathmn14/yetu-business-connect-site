@@ -1559,7 +1559,7 @@ textarea.form-control {
     }
     
     /* Styles du menu de navigation mobile */
-    .nav-links {
+    .navbar .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
@@ -1576,19 +1576,20 @@ textarea.form-control {
         z-index: 1000;
         padding: 80px 20px 40px;
         overflow-y: auto;
+        margin: 0;
     }
     
-    .nav-links.active {
+    .navbar .nav-links.active {
         right: 0;
     }
     
-    .nav-links li {
+    .navbar .nav-links li {
         margin: 15px 0;
         width: 100%;
         text-align: center;
     }
     
-    .nav-links a {
+    .navbar .nav-links a {
         font-size: 1.1rem;
         color: var(--dark-color);
         font-weight: 500;
@@ -1596,11 +1597,12 @@ textarea.form-control {
         display: block;
         transition: color 0.3s ease, background-color 0.3s ease;
         border-radius: 5px;
+        text-align: center;
     }
     
-    .nav-links a:hover,
-    .nav-links a:focus,
-    .nav-links a.active {
+    .navbar .nav-links a:hover,
+    .navbar .nav-links a:focus,
+    .navbar .nav-links a.active {
         color: var(--primary-color);
         background-color: rgba(46, 204, 113, 0.1);
     }

@@ -388,18 +388,5 @@
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
-    <script>
-        // Menu mobile
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-
-        // Animation au défilement
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        });
-    </script>
 </body>
 </html>
