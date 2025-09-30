@@ -2141,16 +2141,20 @@ textarea.form-control {
 .section-header {
     text-align: center;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .section-subtitle {
-    display: inline-block;
+    display: block;
     color: var(--primary-color);
     font-size: 1.1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 15px;
+    width: 100%;
 }
 
 .section-title {
@@ -2159,6 +2163,7 @@ textarea.form-control {
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 15px;
+    width: 100%;
 }
 
 .section-title:after {
