@@ -55,11 +55,7 @@
     <!-- Hero Section -->
     <section id="accueil" class="hero">
         <div class="hero-image">
-            <picture>
-                <source media="(max-width: 768px)" srcset="assets/images/hero/hero-home-mobile.jpg">
-                <source media="(min-width: 769px)" srcset="assets/images/hero/hero-home.jpg">
-                <img src="assets/images/hero/hero-home.jpg" alt="Équipe Yetu Business Connect - Votre partenaire d'affaires">
-            </picture>
+            <div class="hero-bg" style="background-image: url('assets/images/hero/hero-home.jpg');"></div>
             <div class="hero-overlay"></div>
         </div>
         <div class="container">
@@ -412,8 +408,6 @@
                             </div>
                         </div>
                     </div>
-                        <div class="error-message">Veuillez sélectionner un service</div>
-                    </div>
                     <div class="form-group message-group">
                         <textarea id="message" name="message" class="form-control" rows="5" placeholder=" " required></textarea>
                         <label for="message">Votre message *</label>
@@ -578,5 +572,5 @@
             once: true
         });
     </script>
-</body>
+    </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nos Produits - Yetu Business Connect</title>
-    <meta name="description" content="Découvrez nos produits de qualité supérieure - Yetu Business Connect, votre partenaire en agriculture moderne et services logistiques.">
+    <meta name="description" content="Découvrez nos produits naturels de qualité - Huiles, savons, cacao et plus encore. Yetu Business Connect, l'excellence à votre portée.">
     
     <!-- Favicon -->
     <link rel="icon" href="assets/images/favicon.ico">
@@ -18,21 +18,132 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/products.css">
+    <style>
+        /* Style pour la page produits */
+        .products-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/tous les produits yetu.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 150px 20px;
+            margin-bottom: 50px;
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .products-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .category-section {
+            padding: 40px 0;
+        }
+
+        .category-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            color: #2c3e50;
+        }
+
+        .category-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #3498db;
+            margin: 15px auto 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .product-description {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                padding: 0 15px;
+            }
+            
+            .products-hero {
+                padding: 100px 20px;
+                min-height: 60vh;
+                background-attachment: scroll;
+                background-position: center center;
+            }
+            
+            .products-hero h1 {
+                font-size: 2.2rem;
+                margin-bottom: 15px;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            }
+            
+            .products-hero p {
+                font-size: 1.1rem;
+                text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="index.html" class="logo">
-                    <div class="logo-icon">
-                        <img src="assets/images/logo.jpeg" alt="Yetu Business Connect" class="logo-img">
-                    </div>
-                    <div class="logo-text">
-                        <span class="logo-title">Yetu Business Connect</span>
-                        <span class="logo-slogan">Votre partenaire d'affaires</span>
-                    </div>
-                </a>
+                <div class="logo">
+                    <a href="index.html">Yetu Business Connect</a>
+                </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="index.html#services">Services</a></li>
@@ -51,219 +162,164 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Nos Produits</h1>
-            <p>Découvrez notre gamme complète de produits de qualité supérieure</p>
-        </div>
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <h1>Nos Produits Naturels</h1>
+        <p>Découvrez notre gamme de produits naturels et artisanaux</p>
     </section>
 
-    <!-- Products Section -->
-    <section class="products-section section-padding">
-        <div class="container">
-            <div class="section-header">
-                <h2>Nos Produits Agricoles</h2>
-                <p>Des produits frais et de qualité, cultivés avec soin</p>
-            </div>
-
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all">Tous les produits</button>
-                <button class="filter-btn" data-filter="legumes">Légumes</button>
-                <button class="filter-btn" data-filter="fruits">Fruits</button>
-                <button class="filter-btn" data-filter="semences">Semences</button>
-                <button class="filter-btn" data-filter="intrants">Intrants</button>
-            </div>
-
-            <div class="products-grid">
-                <!-- Produit 1 -->
-                <div class="product-card" data-category="legumes">
-                    <div class="product-image">
-                        <img src="assets/images/piment.jpg" alt="Piment">
-                        <div class="product-overlay">
-                            <a href="produit-details.html?id=1" class="btn btn-primary">Voir détails</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Piment frais</h3>
-                        <div class="product-meta">
-                            <span class="category">Légume</span>
-                            <span class="price">5 000 FC/kg</span>
-                        </div>
-                        <p>Piments frais et piquants, riches en saveur et en arômes.</p>
-                        <a href="#" class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produit 2 -->
-                <div class="product-card" data-category="legumes">
-                    <div class="product-image">
-                        <img src="assets/images/concombre.jpg" alt="Concombre">
-                        <div class="product-overlay">
-                            <a href="produit-details.html?id=2" class="btn btn-primary">Voir détails</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Concombre</h3>
-                        <div class="product-meta">
-                            <span class="category">Légume</span>
-                            <span class="price">3 500 FC/kg</span>
-                        </div>
-                        <p>Concombres frais et croquants, parfaits pour les salades.</p>
-                        <a href="#" class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produit 3 -->
-                <div class="product-card" data-category="legumes">
-                    <div class="product-image">
-                        <img src="assets/images/tomate.jpg" alt="Tomate">
-                        <div class="product-overlay">
-                            <a href="produit-details.html?id=3" class="btn btn-primary">Voir détails</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Tomate fraîche</h3>
-                        <div class="product-meta">
-                            <span class="category">Légume</span>
-                            <span class="price">4 000 FC/kg</span>
-                        </div>
-                        <p>Tomates rouges et juteuses, riches en antioxydants.</p>
-                        <a href="#" class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produit 4 -->
-                <div class="product-card" data-category="legumes">
-                    <div class="product-image">
-                        <img src="assets/images/aubergine.jpg" alt="Aubergine">
-                        <div class="product-overlay">
-                            <a href="produit-details.html?id=4" class="btn btn-primary">Voir détails</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Aubergine</h3>
-                        <div class="product-meta">
-                            <span class="category">Légume</span>
-                            <span class="price">4 500 FC/kg</span>
-                        </div>
-                        <p>Aubergines fraîches, parfaites pour des plats savoureux.</p>
-                        <a href="#" class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produit 5 -->
-                <div class="product-card" data-category="legumes">
-                    <div class="product-image">
-                        <img src="assets/images/salade.jpg" alt="Salade">
-                        <div class="product-overlay">
-                            <a href="produit-details.html?id=5" class="btn btn-primary">Voir détails</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Salade fraîche</h3>
-                        <div class="product-meta">
-                            <span class="category">Légume</span>
-                            <span class="price">2 500 FC/pièce</span>
-                        </div>
-                        <p>Salade fraîche et croquante, idéale pour les repas légers.</p>
-                        <a href="#" class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produit 6 -->
-                <div class="product-card" data-category="semences">
-                    <div class="product-image">
-                        <img src="assets/images/semences-tomate.jpg" alt="Semences de tomate">
-                        <div class="product-overlay">
-                            <a href="produit-details.html?id=6" class="btn btn-primary">Voir détails</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Semences de tomate</h3>
-                        <div class="product-meta">
-                            <span class="category">Semences</span>
-                            <span class="price">10 000 FC/sachet</span>
-                        </div>
-                        <p>Semences de tomates de haute qualité pour une récolte abondante.</p>
-                        <a href="#" class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produit 7 -->
-                <div class="product-card" data-category="intrants">
-                    <div class="product-image">
-                        <img src="assets/images/engrais.jpg" alt="Engrais organique">
-                        <div class="product-overlay">
-                            <a href="produit-details.html?id=7" class="btn btn-primary">Voir détails</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Engrais organique</h3>
-                        <div class="product-meta">
-                            <span class="category">Intrants</span>
-                            <span class="price">25 000 FC/sac</span>
-                        </div>
-                        <p>Engrais 100% naturel pour une agriculture biologique et durable.</p>
-                        <a href="#" class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produit 8 -->
-                <div class="product-card" data-category="fruits">
-                    <div class="product-image">
-                        <img src="assets/images/fruits-tropicaux.jpg" alt="Fruits tropicaux">
-                        <div class="product-overlay">
-                            <a href="produit-details.html?id=8" class="btn btn-primary">Voir détails</a>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <h3>Fruits tropicaux</h3>
-                        <div class="product-meta">
-                            <span class="category">Fruits</span>
-                            <span class="price">À partir de 3 000 FC/kg</span>
-                        </div>
-                        <p>Une sélection de fruits tropicaux frais et juteux.</p>
-                        <a href="#" class="add-to-cart">
-                            <i class="fas fa-shopping-cart"></i> Ajouter au panier
-                        </a>
-                    </div>
+    <!-- Huiles et Graines -->
+    <section class="category-section">
+        <h2 class="category-title">Huiles et Graines</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="assets/images/Sesame yetu.jpeg" alt="Huile de Sésame Yetu" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Huile de Sésame Yetu</h3>
+                    <p class="product-description">Huile de sésame 100% pure, pressée à froid pour préserver tous ses bienfaits naturels et son arôme délicat.</p>
                 </div>
             </div>
 
-            <div class="pagination">
-                <a href="#" class="active">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#"><i class="fas fa-chevron-right"></i></a>
+            <div class="product-card">
+                <img src="assets/images/Sesame_chia_cacao.jpeg" alt="Mélange Sésame Chia Cacao" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Mélange Sésame Chia Cacao</h3>
+                    <p class="product-description">Un mélange unique de graines de sésame, chia et cacao pour une touche gourmande et nutritive.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/chia yetu.jpeg" alt="Graines de Chia Yetu" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Graines de Chia Yetu</h3>
+                    <p class="product-description">Graines de chia riches en oméga-3, protéines et fibres. Idéales pour une alimentation saine et équilibrée.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-content">
-                <h3>Restez informé de nos offres spéciales</h3>
-                <p>Abonnez-vous à notre newsletter pour recevoir des offres exclusives et des mises à jour sur nos produits.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Votre adresse email" required>
-                    <button type="submit" class="btn btn-primary">S'abonner</button>
-                </form>
+    <!-- Cacao et Chocolat -->
+    <section class="category-section" style="background-color: #f9f9f9;">
+        <h2 class="category-title">Cacao et Chocolat</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="assets/images/cacao en poudre yetu.jpeg" alt="Cacao en poudre Yetu" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Cacao en poudre Yetu</h3>
+                    <p class="product-description">Cacao 100% pur, non sucré, riche en antioxydants. Parfait pour les boissons et pâtisseries.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/chocolat en poudre yetu.jpeg" alt="Chocolat en poudre Yetu" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Chocolat en poudre Yetu</h3>
+                    <p class="product-description">Chocolat en poudre délicieux, idéal pour préparer des boissons chaudes réconfortantes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Glycérine -->
+    <section class="category-section">
+        <h2 class="category-title">Glycérine Naturelle</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="assets/images/glycerine yetu.jpeg" alt="Glycérine Yetu" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Glycérine Yetu</h3>
+                    <p class="product-description">Glycérine végétale pure, idéale pour les soins de la peau et des cheveux.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/glycerine jaune yetu.jpeg" alt="Glycérine Jaune" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Glycérine Jaune</h3>
+                    <p class="product-description">Glycérine enrichie, parfaite pour les soins capillaires et corporels.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/glycerine verte yetu.jpeg" alt="Glycérine Verte" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Glycérine Verte</h3>
+                    <p class="product-description">Glycérine naturelle à la teinte verte, pour des soins beauté naturels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Savons -->
+    <section class="category-section" style="background-color: #f9f9f9;">
+        <h2 class="category-title">Savons Naturels</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="assets/images/savon yetu.jpeg" alt="Savon Yetu" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Savon Yetu</h3>
+                    <p class="product-description">Savon artisanal à base d'ingrédients naturels pour une peau douce et saine.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/savon noir du benin.jpeg" alt="Savon Noir du Bénin" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Savon Noir du Bénin</h3>
+                    <p class="product-description">Savon traditionnel africain aux multiples vertus pour la peau et les cheveux.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/yetu savon de main jaune et vert.jpeg" alt="Savon de Main Jaune et Vert" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Savon de Main</h3>
+                    <p class="product-description">Savon doux pour les mains, disponible en différentes senteurs et couleurs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vaseline -->
+    <section class="category-section">
+        <h2 class="category-title">Produits de Soin</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="assets/images/vaseline.jpeg" alt="Vaseline Yetu" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Vaseline Yetu</h3>
+                    <p class="product-description">Soin protecteur pour une peau douce et hydratée en toutes circonstances.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/vaseline verte.jpeg" alt="Vaseline Verte" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Vaseline Verte</h3>
+                    <p class="product-description">Soin réparateur à la formule enrichie pour les peaux les plus exigeantes.</p>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="assets/images/vaseline_double_taille.jpeg" alt="Vaseline Double Taille" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Vaseline Double Taille</h3>
+                    <p class="product-description">Format économique de notre vaseline pour des soins au quotidien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autres Produits -->
+    <section class="category-section" style="background-color: #f9f9f9;">
+        <h2 class="category-title">Autres Produits</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="assets/images/charme de cheveux yetu.jpeg" alt="Charme de Cheveux Yetu" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-title">Charme de Cheveux</h3>
+                    <p class="product-description">Accessoires de beauté pour cheveux, alliant élégance et tradition.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -272,51 +328,26 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-about">
+                <div class="footer-section">
                     <h3>Yetu Business Connect</h3>
-                    <p>Votre partenaire de confiance pour des produits agricoles de qualité.</p>
-                    <div class="footer-address">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>RDC, Nord Kivu, Butembo<br>
-                        Boulevard rue président de la République<br>
-                        Bâtiment Kidubai Butembo, 3ème niveau</p>
-                    </div>
+                    <p>Votre partenaire en produits naturels de qualité.</p>
                 </div>
-                <div class="footer-links">
+                <div class="footer-section">
                     <h3>Liens Rapides</h3>
                     <ul>
                         <li><a href="index.html">Accueil</a></li>
-                        <li><a href="index.html#services">Services</a></li>
-                        <li><a href="index.html#agriculture">Agriculture</a></li>
-                        <li><a href="index.html#cooperative">Coopérative</a></li>
-                        <li><a href="index.html#logistique">Logistique</a></li>
                         <li><a href="produits.html">Nos Produits</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div class="footer-services">
-                    <h3>Nos Services</h3>
-                    <ul>
-                        <li>Marketing Relationnel</li>
-                        <li>Agriculture Moderne</li>
-                        <li>Coopérative Agricole</li>
-                        <li>Services Logistiques</li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
+                <div class="footer-section">
                     <h3>Contactez-nous</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> RDC, Nord Kivu, Butembo<br>
-                    Boulevard rue président de la République<br>
-                    Bâtiment Kidubai Butembo, 3ème niveau</p>
-                    <p><i class="fas fa-phone"></i> +243 974 659 021</p>
-                    <p><i class="fas fa-envelope"></i> info@yetubusinessconnect.com</p>
+                    <p>Email: contact@yetubusiness.com</p>
+                    <p>Téléphone: +243 XX XXX XXXX</p>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>&copy; 2025 Yetu Business Connect. Tous droits réservés.</p>
-                <div class="footer-legal">
-                    <a href="#">Politique de confidentialité</a>
-                    <a href="#">Conditions d'utilisation</a>
-                </div>
             </div>
         </div>
     </footer>
@@ -328,6 +359,18 @@
 
     <!-- JavaScript -->
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/products.js"></script>
+    <script>
+        // Menu mobile
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+
+        // Animation au défilement
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
 </body>
 </html>
